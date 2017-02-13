@@ -1,6 +1,6 @@
 # TypingProgram
 
-This is a typing program I created that has 3 classes (main, GUI and WordList)
+This is a typing program I created that has 3 classes (AppStart, GUI and WordList)
 
 Stuff used:
 Interfaces (KeyListener)
