@@ -34,3 +34,7 @@ Things I am unsure about:
 Creating random counter variables, maybe a better way to do it.
 Not using enough methods.
 Too many nest if else statements.
+
+Bugs:
+Cannot start a new session
+After entering first letter of the word, it says you typed incorrectly even though it may be correct.
