@@ -26,6 +26,8 @@ public class GUI extends JFrame implements KeyListener {
 	private int ii = i+1;
 	private int iii = 0;
 	
+//Timer
+	JLabel timerLabel = new JLabel("");
 
 //ArrayList to set Flag to not reuse same word.
 	ArrayList<String> flagNoNewNumbers = new ArrayList<String>();
@@ -44,6 +46,7 @@ public class GUI extends JFrame implements KeyListener {
 		add(keyLabel, BorderLayout.CENTER);
 		add(wordPulledLabel, BorderLayout.NORTH);
 		add(keyText, BorderLayout.SOUTH);
+		add(timerLabel, BorderLayout.EAST);
 		flagNoNewNumbers.add(wordPulled);		
 	}
 
@@ -57,6 +60,7 @@ public class GUI extends JFrame implements KeyListener {
 			
 		
 		System.out.println(flagNoNewNumbers);
+		
 		if (keyChar == wordPulled.charAt(i)){	
 			
 			keyLabel.setText("You typed it correctly!");
@@ -73,9 +77,9 @@ public class GUI extends JFrame implements KeyListener {
 			i++;
 			ii++;
 			}
-			else
+		else
 			{
-				keyLabel.setText("you pressed the wrong key.");
+				keyLabel.setText("Try another key...");
 				
 			}
 		keyText.setText("");
@@ -91,6 +95,7 @@ public class GUI extends JFrame implements KeyListener {
 			checkNoNewNumbers();
 		wordPulledLabel.setText("Type in the Letters of this word: 			" + wordPulled);
 			getWord();
+		
 	}
 	
 //checks ArrayList to see if words were inserted.	
@@ -117,6 +122,10 @@ public class GUI extends JFrame implements KeyListener {
 		}else if (flagNoNewNumbers.contains(wordPulled) && (flagNoNewNumbers.size() == wordListObj.arrLength) && (iii==1))
 		{
 			wordPulledLabel.setText("You've typed all the words! Congratulations.");
+			long end = System.currentTimeMillis( );
+			long diff = (end - AppStart.start);
+			String diff2 = String.valueOf(diff);
+			timerLabel.setText("You completed in "+ diff2 + " milliseconds");
 		}
 		}	
 	
