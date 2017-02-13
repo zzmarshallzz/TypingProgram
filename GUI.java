@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 public class GUI extends JFrame implements KeyListener {
 
-//text field and label for output and input.
+//Variables of text field and label for output and input.
 	JTextField keyText = new JTextField(20);
 	JLabel keyLabel = new JLabel("Type in the correct letters");
 	
@@ -26,14 +26,14 @@ public class GUI extends JFrame implements KeyListener {
 	private int ii = i+1;
 	private int iii = 0;
 	
-//Timer
+//Variable to display the Timer via JLabel's Text String output.
 	JLabel timerLabel = new JLabel("");
 
-//ArrayList to set Flag to not reuse same word.
+//ArrayList to check if a word has been typed or not, in effort to prevent user from typing in the same word twice.
 	ArrayList<String> flagNoNewNumbers = new ArrayList<String>();
 	
 	
-//Sets up new canvas and layout
+//Sets up new canvas and layout(text output boxes and input text fields)
 	public GUI () {
 		keyText.addKeyListener(this);
 		setSize (400, 400);
@@ -86,7 +86,7 @@ public class GUI extends JFrame implements KeyListener {
 		
 		}
 
-//method to reset the word
+//method to reset the word that has been pulled from the WordList Class.
 	void resetWord(){
 		i=0;
 		ii=i+1;
@@ -98,7 +98,7 @@ public class GUI extends JFrame implements KeyListener {
 		
 	}
 	
-//checks ArrayList to see if words were inserted.	
+//method that checks an ArrayList (used to keep track of words already used) to see if pulled words were inserted or used already.
 	void checkNoNewNumbers(){
 		
 		if (flagNoNewNumbers.contains(wordPulled) && (flagNoNewNumbers.size()!=wordListObj.arrLength))
@@ -114,7 +114,7 @@ public class GUI extends JFrame implements KeyListener {
 			}
 	}
 	
-	
+//method to check what word the user is typing, whether it is the next to alst word or the user has typed all the words.	
 	void checkFinish(){
 		if (flagNoNewNumbers.contains(wordPulled) && (flagNoNewNumbers.size()==wordListObj.arrLength) && (iii==0)) {
 			wordPulledLabel.setText("Almost there... Last word:      " + wordPulled);
