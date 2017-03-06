@@ -14,7 +14,7 @@ constructor initializing and kicking off the method to execute the logic.
 Casting/Converting Long to String datatype.
 
 
-It took me a couple of hours to figure out how to sync things when entering key strokes when prompted.  
+It took me a couple of hours to figure out how to sync things when entering key strokes when prompted.  Now able to keep cycling through the 5 words! (3-5-2017)
 
 Issue:
 Sometimes the application would give a message that you did not type the correct letter, when in fact you did.
@@ -36,5 +36,4 @@ Not using enough methods.
 Too many nest if else statements.
 
 Bugs:
-Cannot start a new session
 After entering first letter of the word, it says you typed incorrectly even though it may be correct.
